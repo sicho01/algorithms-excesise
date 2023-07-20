@@ -4,7 +4,7 @@ function solution(clothes) {
   const clothes_dic = {};
   let result_count = 1;
 
-  clothes.forEach((cloth) => {
+  clothes.forEach(cloth => {
     const [name, category] = cloth;
     if (clothes_dic[`${category}`] === undefined) {
       clothes_dic[`${category}`] = [name];
@@ -13,7 +13,7 @@ function solution(clothes) {
     }
   });
 
-  Object.keys(clothes_dic).forEach((category) => {
+  Object.keys(clothes_dic).forEach(category => {
     result_count *= clothes_dic[category].length + 1;
   });
 
