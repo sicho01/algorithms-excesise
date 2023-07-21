@@ -1,8 +1,10 @@
+// url: https://school.programmers.co.kr/learn/courses/30/lessons/86491
+
 function solution(sizes) {
   let max_width = -1;
   let max_height = -1;
 
-  sizes.forEach((size) => {
+  sizes.forEach(size => {
     const [w, h] = size;
     const width = w > h ? w : h;
     const height = w > h ? h : w;

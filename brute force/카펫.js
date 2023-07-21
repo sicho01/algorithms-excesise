@@ -1,3 +1,6 @@
+// url: https://school.programmers.co.kr/learn/courses/30/lessons/42842
+// level 2
+
 function solution(brown, yellow) {
   const total_count = brown + yellow;
   const return_combination = [];
@@ -10,12 +13,11 @@ function solution(brown, yellow) {
     }
   }
 
-  let result;
-  return_combination.forEach((comb) => {
+  for (const comb of return_combination) {
     const [width, height] = comb;
     if (width * 2 + height * 2 - 4 === brown) {
-      result = comb;
+      return comb;
     }
-  });
-  return result;
+  }
+  return [];
 }
