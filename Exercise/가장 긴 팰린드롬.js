@@ -1,9 +1,9 @@
 // url: https://school.programmers.co.kr/learn/courses/30/lessons/12904
-// DP 이용하면 됨.
+// DP 이용하면 됨. LIS랑 비슷할 듯.
 
 function solution(s) {
   const n = s.length;
-  const memo = new Array(n).fill().map((_) => new Array(n).fill(false));
+  const memo = new Array(n).fill().map(_ => new Array(n).fill(false));
   for (let i = 0; i < n; i++) {
     memo[i][i] = true;
   }
