@@ -7,9 +7,7 @@ function solution(subsequences) {
   let source = [...subsequences[0]];
   let target = [...subsequences[1]];
 
-  const DP = new Array(source.length + 1)
-    .fill()
-    .map((_) => new Array(target.length + 1).fill(0));
+  const DP = new Array(source.length + 1).fill().map(_ => new Array(target.length + 1).fill(0));
 
   for (let i = 1; i < source.length + 1; i++) {
     for (let j = 1; j < target.length + 1; j++) {

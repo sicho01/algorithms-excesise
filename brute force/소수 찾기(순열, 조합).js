@@ -28,22 +28,22 @@ function solution(numbers) {
       // 매개변수 L이 n과 같아지면 answer에 push해준다.
       // slice() 메서드를 사용한 이유는 재귀를 돌며 temp가 바뀌기 떄문이다.
       return;
-    } else {
-      for (let i = 0; i < piece.length; i++) {
-        // visited[i]가 0이라면
-        if (!visited[i]) {
-          // visited[i]를 1로 바꾸어 현재 사용하고 있다고 설정한다.
-          visited[i] = true;
+    }
 
-          // 레벨을 1 올려준 뒤 dfs 재귀함수를 호출한다.
-          // 레벨이 n과 같아지면 answer에 push후 종료할 것이고
-          // 아닐 경우 현재 visited에 체크된 사용중 인덱스를 제외하고
-          // for()문이 돌며 레벨이 맞춰질 때 까지 재귀함수를 실행할 것이다.
-          results.push(Number(target + piece[i]));
-          dfs(level + 1, target + piece[i]);
-          // 사용을 완료했으면 visited[1]에 다시 0을 넣어 사용하지 않음으로 설정한다.
-          visited[i] = false;
-        }
+    for (let i = 0; i < piece.length; i++) {
+      // visited[i]가 0이라면
+      if (!visited[i]) {
+        // visited[i]를 1로 바꾸어 현재 사용하고 있다고 설정한다.
+        visited[i] = true;
+
+        // 레벨을 1 올려준 뒤 dfs 재귀함수를 호출한다.
+        // 레벨이 n과 같아지면 answer에 push후 종료할 것이고
+        // 아닐 경우 현재 visited에 체크된 사용중 인덱스를 제외하고
+        // for()문이 돌며 레벨이 맞춰질 때 까지 재귀함수를 실행할 것이다.
+        results.push(Number(target + piece[i]));
+        dfs(level + 1, target + piece[i]);
+        // 사용을 완료했으면 visited[1]에 다시 0을 넣어 사용하지 않음으로 설정한다.
+        visited[i] = false;
       }
     }
   }

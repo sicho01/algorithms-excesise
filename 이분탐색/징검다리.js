@@ -1,5 +1,6 @@
 // url: https://school.programmers.co.kr/learn/courses/30/lessons/43236
-// binary search
+// level 4
+// distance 제한이 10억. 이분탐색 ㄱㄱ
 
 function solution(distance, rocks, n) {
   // 2, 11, 14, 17, 21, [25]

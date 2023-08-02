@@ -1,4 +1,6 @@
 // url: https://school.programmers.co.kr/learn/courses/30/lessons/43238
+// level 3
+// n이 1,000,000,000, 10억임. 비정상적으로 높을 땐, 이분탐색 고려
 
 function solution(n, times) {
   times.sort((a, b) => a - b);

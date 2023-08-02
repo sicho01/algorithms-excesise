@@ -1,6 +1,7 @@
 // url: https://school.programmers.co.kr/learn/courses/30/lessons/49189
 
 // 그래프 + BFS
+// level 3
 // BFS로 node로 최단 거리 array 만듬 -> max 값 구한 뒤 -> 노드 개수 구하면 됨.
 function solution(n, edge) {
   const connects = new Array(n).fill().map(_ => []);

@@ -1,4 +1,5 @@
 // url: https://school.programmers.co.kr/learn/courses/30/lessons/42627
+// level 3
 
 function solution(jobs) {
   const length = jobs.length;
@@ -11,7 +12,7 @@ function solution(jobs) {
 
   while (jobs.length > 0) {
     const next_queue = [];
-    jobs.forEach((job) => {
+    jobs.forEach(job => {
       const [start, length] = job;
       if (start <= cur_time) {
         next_queue.push(job);
@@ -24,7 +25,7 @@ function solution(jobs) {
       cur_time = cur_job.at(0) + cur_job.at(1);
     } else {
       next_queue.sort((a, b) => a[1] - b[1]);
-      next_queue.forEach((next_job) => {
+      next_queue.forEach(next_job => {
         cur_time += next_job[1];
         sum += cur_time - next_job[0];
         jobs.shift();

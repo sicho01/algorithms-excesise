@@ -5,7 +5,7 @@
 // 2번 수포자가 찍는 방식: 2, 1, 2, 3, 2, 4, 2, 5, 2, 1, 2, 3, 2, 4, 2, 5, ...
 // 3번 수포자가 찍는 방식: 3, 3, 1, 1, 2, 2, 4, 4, 5, 5, 3, 3, 1, 1, 2, 2, 4, 4, 5, 5, ...
 function solution(answers) {
-  const correctCount = new Array(3).fill(0);
+  const correctCount = [0, 0, 0];
   const pattern1 = [1, 2, 3, 4, 5];
   const pattern2 = [2, 1, 2, 3, 2, 4, 2, 5];
   const pattern3 = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
@@ -26,7 +26,7 @@ function solution(answers) {
   }
 
   const max = Math.max(...correctCount);
-  return [1, 2, 3].filter((_, i) => correctCount[i] === max);
+  return [0, 1, 2].filter(i => correctCount[i] === max);
 }
 
 console.log(solution([1, 3, 2, 4, 2]));
