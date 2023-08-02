@@ -25,8 +25,6 @@ function solution(numbers) {
   // level: 현재 뎁스 레벨
   function dfs(level, target) {
     if (level === n) {
-      // 매개변수 L이 n과 같아지면 answer에 push해준다.
-      // slice() 메서드를 사용한 이유는 재귀를 돌며 temp가 바뀌기 떄문이다.
       return;
     }
 
