@@ -17,7 +17,7 @@ function solution(s) {
 
   while (s !== "1") {
     const convertedStr = [];
-    [...s].forEach((char) => {
+    [...s].forEach(char => {
       if (char === "1") {
         convertedStr.push(char);
       } else {
@@ -33,8 +33,8 @@ function solution(s) {
 
 // 다른 사람꺼
 function solution(s) {
-  let convertCount = 0,
-    deleteZeroCount = 0;
+  let convertCount = 0;
+  let deleteZeroCount = 0;
   while (s !== "1") {
     const beforeSLength = s.length;
     const nowSLength = s.replace(/0/gi, "").length;

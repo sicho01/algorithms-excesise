@@ -1,4 +1,5 @@
 // LIS: Longest Increasing Subsequence
+// ref url: https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=jh20s&logNo=221310955726
 
 function solution(n, arr) {
   if (n === 1) {

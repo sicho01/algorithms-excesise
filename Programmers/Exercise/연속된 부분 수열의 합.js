@@ -1,4 +1,5 @@
 // url: https://school.programmers.co.kr/learn/courses/30/lessons/178870
+// 연속된 부분 수열의 합이 K인 subarray 찾기.
 // two-pointer
 
 function solution(sequence, k) {
@@ -19,7 +20,5 @@ function solution(sequence, k) {
     }
   }
   // 후보 중 가장 차가 적은 것을 리턴
-  return candidate.sort(
-    ([aLeft, aRight], [bLeft, bRight]) => aRight - aLeft - (bRight - bLeft)
-  )[0];
+  return candidate.sort(([aLeft, aRight], [bLeft, bRight]) => aRight - aLeft - (bRight - bLeft))[0];
 }
