@@ -1,4 +1,5 @@
 // url: https://school.programmers.co.kr/learn/courses/30/lessons/43165
+// level2
 
 function solution(numbers, target) {
   // 값을 더하고 빼는 과정에서 음수가 나올수 있으므로

@@ -2,33 +2,31 @@
 // BFS: 최단거리를 구해야 할 때는 BFS -> DFS와 달리 노드에서 가까운 곳부터 찾기 때문에 최단거리 구할 때 용이.
 
 function solution(maps) {
-  const yLen = maps.length;
-  const xLen = maps[0].length;
-  const goalY = yLen - 1;
-  const goalX = xLen - 1;
-  const dy = [0, 0, 1, -1];
-  const dx = [-1, 1, 0, 0];
+  const [xLength, yLength] = [maps[0].length, maps.length];
+  const [destX, destY] = [xLength - 1, yLength - 1];
+  const moves = [
+    [-1, 0],
+    [1, 0],
+    [0, -1],
+    [0, 1],
+  ];
 
   const queue = [];
   queue.push([0, 0, 1]);
 
   while (queue.length) {
-    const [curY, curX, move] = queue.shift();
-    if (curY === goalY && curX === goalX) {
-      return move;
+    const [curX, curY, count] = queue.shift();
+    if (curX === destX && curY === destY) {
+      return count;
     }
 
-    for (let i = 0; i < 4; i++) {
-      const nextY = curY + dy[i];
-      const nextX = curX + dx[i];
-      if (
-        nextY >= 0 &&
-        nextY < yLen &&
-        nextX >= 0 &&
-        nextX < xLen &&
-        maps[nextY][nextX] === 1
-      ) {
-        queue.push([nextY, nextX, move + 1]);
+    for (const [dx, dy] of moves) {
+      const nextX = curX + dx;
+      const nextY = curY + dy;
+      const isInRange = nextX >= 0 && nextY >= 0 && nextX < xLength && nextY < yLength && maps[nextY][nextX] === 1;
+
+      if (isInRange) {
+        queue.push([nextX, nextY, count + 1]);
         maps[nextY][nextX] = 0;
       }
     }

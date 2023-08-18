@@ -17,6 +17,7 @@ function solution(n, edge) {
 
     for (const next of connects[cur]) {
       if (!visited[next]) {
+        // 여기가 중요!
         visited[next] = visited[cur] + 1;
         queue.push(next);
       }

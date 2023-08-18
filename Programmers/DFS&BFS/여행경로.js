@@ -1,3 +1,6 @@
+// url: https://school.programmers.co.kr/learn/courses/30/lessons/43164
+// level3
+
 function solution(tickets) {
   // [["ICN", "A"], ["A", "B"], ["A", "B"], ["B", "A"]]
   // [["ICN", "A"], ["ICN", "B"], ["B", "ICN"]]
