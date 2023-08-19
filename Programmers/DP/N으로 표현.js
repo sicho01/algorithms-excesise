@@ -1,4 +1,5 @@
 // url: https://school.programmers.co.kr/learn/courses/30/lessons/42895
+// level 3
 
 function solution(N, number) {
   const use = new Array(9).fill(new Set());

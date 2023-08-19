@@ -1,4 +1,5 @@
 // url: https://school.programmers.co.kr/learn/courses/30/lessons/86491
+// level1
 
 function solution(sizes) {
   let max_width = -1;

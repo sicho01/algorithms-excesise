@@ -13,10 +13,11 @@ function solution(money) {
   dp2[1] = money[1];
 
   for (let i = 2; i < n; i++) {
-    if (i !== n - 1) {
-      dp1[i] = Math.max(dp1[i - 1], dp1[i - 2] + money[i]);
-    } else {
+    const isLastIndex = i === n - 1;
+    if (isLastIndex) {
       dp1[i] = dp1[i - 1];
+    } else {
+      dp1[i] = Math.max(dp1[i - 1], dp1[i - 2] + money[i]);
     }
 
     dp2[i] = Math.max(dp2[i - 1], dp2[i - 2] + money[i]);

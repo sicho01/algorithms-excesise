@@ -1,4 +1,5 @@
 // url: https://school.programmers.co.kr/learn/courses/30/lessons/42898
+// level 3
 
 function solution(m, n, puddles) {
   // m: x, n: y

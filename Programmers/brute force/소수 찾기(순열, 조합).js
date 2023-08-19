@@ -1,6 +1,9 @@
 // url: https://school.programmers.co.kr/learn/courses/30/lessons/42839
 // 소수찾기 + 순열 with DFS
 // level2
+// "17" -> "7", "17", "71"
+// 주어진 number로 만들 수 있는 모든 수를 순열로 array 만듬.
+// array 중 prime만 filter 하면 됨.
 
 function isPrime(number) {
   if (number === 0 || number === 1) {
