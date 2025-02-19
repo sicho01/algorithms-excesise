@@ -68,14 +68,14 @@ while (queue.length) {
 }
 ```
 
-### Dijkstra
+### Dijkstra1
 
 ```ts
 // arg1: n = length
 // arg2: routes
 
 const result = new Array(n).fill(Infinity);
-const map = new Array(n).fill().map((_) => []);
+const map = new Array(n).fill().map(_ => []);
 
 // init
 for (const [from, to, weight] of routes) {
@@ -99,13 +99,57 @@ while (queue.length) {
 }
 ```
 
+### 다익스트라2
+
+```js
+function dijkstra(graph, start) {
+  let n = graph.length;
+  let dist = Array(n).fill(Infinity);
+  let visited = Array(n).fill(false);
+  dist[start] = 0;
+
+  for (let i = 0; i < n; i++) {
+    let u = -1;
+
+    // 방문하지 않은 정점 중 가장 거리가 짧은 정점 선택
+    for (let j = 0; j < n; j++) {
+      if (!visited[j] && (u === -1 || dist[j] < dist[u])) {
+        u = j;
+      }
+    }
+
+    if (dist[u] === Infinity) break; // 더 이상 진행할 수 없는 경우
+
+    visited[u] = true;
+
+    // 현재 정점(u)에서 인접한 정점(v) 업데이트
+    for (let v = 0; v < n; v++) {
+      if (graph[u][v] !== Infinity && dist[u] + graph[u][v] < dist[v]) {
+        dist[v] = dist[u] + graph[u][v];
+      }
+    }
+  }
+  return dist;
+}
+
+// 그래프 예시 (무한대는 Infinity로 표시)
+let graph2 = [
+  [0, 3, Infinity, 7],
+  [8, 0, 2, Infinity],
+  [5, Infinity, 0, 1],
+  [2, Infinity, Infinity, 0],
+];
+
+console.log(dijkstra(graph2, 0)); // 0번 정점에서 시작
+```
+
 ### Floyd-Warshall
 
 ```ts
 // arg1: n = length
 // arg2: routes
 
-const map = new Array(n).fill().map((_) => new Array(n).fill(Infinity));
+const map = new Array(n).fill().map(_ => new Array(n).fill(Infinity));
 
 // Init1
 for (let i = 0; i < n; i++) {
